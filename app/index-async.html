@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>异步加载库</title>
+  <script type="text/javascript" src='bower_components/script.js/dist/script.js'></script>
+  <!-- angular-loader.js 的作用就是使用一些异步加载脚本的库的时候 自动控制依赖顺序 -->
+  <script type="text/javascript" src="bower_components/angular-loader/angular-loader.js"></script>
+  <script type="text/javascript">
+    $script([],function(){
+      console.log(angular);
+      './bower_components/angular/angular.js',
+      './bower_components/angular-route/angular-route.js',
+      './components/http.js',
+      './components/auto-focus.js',
+      './app.js'
+      angular.bootstrap(document, ['moviecat']);
+    });
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
